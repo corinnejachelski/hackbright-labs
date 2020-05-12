@@ -5,12 +5,13 @@ class Cupcake:
     """A cupcake."""
 
     cache = {}
+    class_name = "Cupcake"
 
 
     def __repr__(self):
         """Human-readable printout for debugging."""
 
-        return f'<Cupcake name="{self.name}" qty={self.qty}>'  
+        return f'<{self.class_name} name="{self.name}" qty={self.qty}>'  
 
 
     def __init__(self, name, flavor, price):
@@ -31,7 +32,7 @@ class Cupcake:
     def sell(self, amount):
 
         if self.qty == 0:
-            print("Sorry, these cupcakes are sold out")
+            print(f"Sorry, these {self.class_name.lower()}s are sold out")
             return
         elif amount > self.qty:
             # print(f"Sorry you asked for {amount} cupcakes and {self.qty}")
@@ -58,8 +59,22 @@ class Cupcake:
         if name in cls.cache:
             return cls.cache[name]
         else:
-            print("Sorry, that cupcake doesn't exist")
+            print(f"Sorry, that {cls.class_name.lower()} doesn't exist")
             return
+
+
+
+class Brownie(Cupcake):
+    """A Brownie"""
+
+    class_name = "Brownie" 
+    cache = {}
+
+
+    def __init__(self, name, price):
+        super().__init__(name, "chocolate", price)
+        Brownie.cache[self.name] = self
+
 
 
 if __name__ == '__main__':
