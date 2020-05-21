@@ -16,18 +16,18 @@ def word_counter(file):
 
         #parse through each word in line
         for word in words:
-            #check if word is all alpha characters
-            if word.isalpha():
-                #append word key to dict if not present, or add 1 to present value
-                word_count[word] = word_count.get(word, 0) + 1
-            else:
-                #strip last character in word if not all alpha
-                word = word[:-1]
-                #then add word key to dict if not present, or add 1 to present value
-                word_count[word] = word_count.get(word, 0) + 1
+            word = word.strip("',.!?-#$%^&();:_/")
+            word_count[word] = word_count.get(word, 0) + 1
+            
 
-    #print all key, value pairs
-    for word, count in word_count.items():
-        print(word, count)
+    # sorted_list = sorted(word_count.items())
+    # #print all key, value pairs alphabetically
+    # for word, count in sorted_list:
+    #     print(word, count)
 
-(word_counter(sys.argv[1]))
+    sorted_list = sorted(word_count.values())
+    for value in sorted_list:
+        print(value)
+    
+
+print(word_counter(sys.argv[1]))
