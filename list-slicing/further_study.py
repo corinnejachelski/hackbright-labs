@@ -15,10 +15,9 @@ def custom_len(input_list):
         8
 
     """
-    length = 0
-    for item in input_list:
-        length += 1
-    return length
+
+    return 0
+
 
 # For the next four exercises, you'll need to be clever and think about ways
 # to use list slice assignment.
@@ -44,7 +43,8 @@ def custom_append(input_list, value):
         True
 
     """
-    input_list += [value]
+
+    pass
 
 
 def custom_extend(input_list, second_list):
@@ -62,7 +62,8 @@ def custom_extend(input_list, second_list):
         True
 
     """
-    input_list = input_list + second_list
+
+    pass
 
 
 def custom_insert(input_list, index, value):
@@ -79,7 +80,7 @@ def custom_insert(input_list, index, value):
         True
 
     """
-    #input_list[index:index] = value 
+
     pass
 
 
@@ -98,10 +99,8 @@ def custom_remove(input_list, value):
         True
 
     """
-    if value in input_list:
-        del value
-    else:
-        pass
+
+    pass
 
 
 def custom_pop(input_list):
@@ -119,8 +118,8 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
-    remove_item = input_list[:-1]
-    return remove_item
+
+    return None
 
 
 def custom_index(input_list, value):
@@ -135,10 +134,8 @@ def custom_index(input_list, value):
         1
 
     """
-    if value in input_list:
-        return input_list[value]
-    else:
-        return 
+
+    return 0
 
 
 def custom_count(input_list, value):
@@ -153,12 +150,8 @@ def custom_count(input_list, value):
         2
 
     """
-    count = 0
 
-    for item in input_list:
-        if item == value:
-            count += 1
-    return count
+    return 0
 
 
 def custom_reverse(input_list):
@@ -176,7 +169,8 @@ def custom_reverse(input_list):
         True
 
     """
-    input_list = input_list[::-1]
+
+    pass
 
 
 def custom_contains(input_list, value):
@@ -195,11 +189,9 @@ def custom_contains(input_list, value):
         True
 
     """
-    for num in input_list:
-        if num == value:
-            return True
-        
-    return False
+
+    return None
+
 
 def custom_equality(some_list, another_list):
     """Return True if passed lists are identical, False otherwise.
@@ -216,22 +208,8 @@ def custom_equality(some_list, another_list):
         False
 
     """
-    index = 0
-    count_true = 0
-    count_false = 0
 
-    for i in some_list:
-        if some_list[index] == another_list[index]:
-            count_true += 1
-            index += 1
-        else:
-            count_false += 1
-            index += 1
-
-    if count_false > 0:    
-        return False
-    else:
-        return True
+    return None
 
 
 # This is the part were we actually run the doctests.
